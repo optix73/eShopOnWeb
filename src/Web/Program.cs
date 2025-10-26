@@ -129,8 +129,9 @@ if (useAppConfig)
         .UseFeatureFlags(featureFlagOptions =>
         {
             // Default cache expiration is 30 seconds
-           // featureFlagOptions.CacheExpirationInterval = TimeSpan.FromSeconds(10);
-            featureFlagOptions.SetRefreshInterval = TimeSpan.FromSeconds(10);
+           // featureFlagOptions.CacheExpirationInterval = TimeSpan.FromSeconds(10); // not working.
+            //featureFlagOptions.SetRefreshInterval = TimeSpan.FromSeconds(10); error its a method 
+            featureFlagOptions.SetRefreshInterval(TimeSpan.FromSeconds(30));
             
         });
     });
